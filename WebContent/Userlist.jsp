@@ -34,12 +34,10 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Product Name</th>
-					<th scope="col">Product Price</th>
-					<th scope="col">Product QTY</th>
-					<th scope="col">Product Image</th>
-					<th scope="col">Product Category</th>
-					<th scope="col">Product Description</th>
+					<th scope="col">Name</th>
+					<th scope="col">Contact</th>
+					<th scope="col">Email</th>
+					<th scope="col">Password</th>
 					<th scope="col">Action</th>
 					<th scope="col">Action</th>
 				</tr>
@@ -51,10 +49,10 @@
 					<td>Otto</td>
 					<td>@mdo</td>
 					<td>123</td>
-					<td>123</td>
-					<td>123</td>
-					<td><a href="UpdateProduct.jsp">
+					
+					<td><a href="UpdateUserList.jsp">
 					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
+					</a>
 					</td>
 					<td>
 					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
@@ -66,9 +64,7 @@
 					<td>Thornton</td>
 					<td>@fat</td>
 					<td>123</td>
-					<td>123</td>
-					<td>123</td>
-					<td><a href="UpdateProduct.jsp">
+					<td><a href="UpdateUserList.jsp">
 					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
 					</td>
 					<td>
@@ -81,9 +77,7 @@
 					<td>the Bird</td>
 					<td>@twitter</td>
 					<td>123</td>
-					<td>123</td>
-					<td>123</td>
-					<td><a href="UpdateProduct.jsp">
+					<td><a href="UpdateUserList.jsp">
 					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
 					</td>
 					<td>

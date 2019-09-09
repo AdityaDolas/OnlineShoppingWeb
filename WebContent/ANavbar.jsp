@@ -141,7 +141,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
-					style="color: white;" href="MenShop.jsp">User List <span
+					style="color: white;" href="Userlist.jsp">User List <span
 						class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item active"><a class="nav-link"
@@ -149,7 +149,7 @@
 						class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item active"><a class="nav-link"
-					style="color: white;" href="WomenShop.jsp">Product List<span
+					style="color: white;" href="ProductList.jsp">Product List<span
 						class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item active"><a class="nav-link"
