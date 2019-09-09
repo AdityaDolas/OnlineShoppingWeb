@@ -1,3 +1,4 @@
+<%@page import="java.awt.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!doctype html>
@@ -25,13 +26,18 @@
 </head>
 <body>
 
-	<%-- <jsp:include page="BG.jsp"></jsp:include> --%>
+	<%List<User> al=(List<User>)session.getAttribute("ulist"); %>
+	
+	<jsp:include page="BG.jsp"></jsp:include>
 
 	<jsp:include page="ANavbar.jsp"></jsp:include>
 
 	<div class="con">
 		<table class="table table-dark">
 			<thead>
+
+
+
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Name</th>
@@ -43,32 +49,33 @@
 				</tr>
 			</thead>
 			<tbody>
+				<%
+					for (User u : al) {
+				%>
 				<tr>
 					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>123</td>
-					
+					<td><%u.getName()%></td>
+					<td><%=u.getNumber()%></td>
+					<td><%=u.getEmail() %></td>
+					<td><%=u.getPassword()%></td>
+
 					<td><a href="UpdateUserList.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</a>
-					</td>
+							<button class="btn btn-warning btn-sm" type="submit">Edit</button>
+					</a></td>
 					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
+						<button class="btn btn-danger btn-sm" type="submit">Delete</button>
 					</td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<th scope="row">2</th>
 					<td>Jacob</td>
 					<td>Thornton</td>
 					<td>@fat</td>
 					<td>123</td>
 					<td><a href="UpdateUserList.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</td>
+							<button class="btn btn-warning btn-sm" type="submit">Edit</button></td>
 					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
+						<button class="btn btn-danger btn-sm" type="submit">Delete</button>
 					</td>
 				</tr>
 				<tr>
@@ -78,13 +85,15 @@
 					<td>@twitter</td>
 					<td>123</td>
 					<td><a href="UpdateUserList.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</td>
+							<button class="btn btn-warning btn-sm" type="submit">Edit</button></td>
 					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
+						<button class="btn btn-danger btn-sm" type="submit">Delete</button>
 					</td>
-				</tr>
+				</tr> -->
 			</tbody>
+			<%
+				}
+			%>
 		</table>
 	</div>
 
