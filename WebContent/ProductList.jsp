@@ -1,3 +1,6 @@
+<%@page import="com.aditya.pojo.Product"%>
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!doctype html>
@@ -25,6 +28,9 @@
 </head>
 <body>
 
+
+	<%List<Product> al=(List<Product>)session.getAttribute("plist"); %>
+
 	<%-- <jsp:include page="BG.jsp"></jsp:include> --%>
 
 	<jsp:include page="ANavbar.jsp"></jsp:include>
@@ -37,7 +43,6 @@
 					<th scope="col">Product Name</th>
 					<th scope="col">Product Price</th>
 					<th scope="col">Product QTY</th>
-					<th scope="col">Product Image</th>
 					<th scope="col">Product Category</th>
 					<th scope="col">Product Description</th>
 					<th scope="col">Action</th>
@@ -45,56 +50,29 @@
 				</tr>
 			</thead>
 			<tbody>
+
+				<%for (Product p : al) {%>
+
 				<tr>
 					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>123</td>
-					<td>123</td>
-					<td>123</td>
+					<td><%=p.getPName() %></td>
+					<td><%=p.getPPrice() %></td>
+					<td><%=p.getPQuantity() %></td>
+					<td><%=p.getPCategory() %></td>
+					<td><%=p.getPDescript() %></td>
 					<td><a href="UpdateProduct.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</td>
+							<button class="btn btn-warning btn-sm" type="submit">Edit</button></td>
 					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
+						<button class="btn btn-danger btn-sm" type="submit">Delete</button>
 					</td>
 				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-					<td>123</td>
-					<td>123</td>
-					<td>123</td>
-					<td><a href="UpdateProduct.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</td>
-					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>the Bird</td>
-					<td>@twitter</td>
-					<td>123</td>
-					<td>123</td>
-					<td>123</td>
-					<td><a href="UpdateProduct.jsp">
-					<button class="btn btn-warning btn-sm" type="submit">Edit</button>
-					</td>
-					<td>
-					<button class="btn btn-danger btn-sm" type="submit">Delete</button>
-					</td>
-				</tr>
+
 			</tbody>
+		<%} %>
 		</table>
 	</div>
 
-	<!-- Optional JavaScript -->
+	<!-- Optional JavaScript -->	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

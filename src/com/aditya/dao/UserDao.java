@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jdt.internal.compiler.lookup.ProblemPackageBinding;
 
 import com.aditya.config.DBConnect;
 import com.aditya.pojo.User;
@@ -17,7 +18,7 @@ public class UserDao {
 	public boolean addUser(User u) {
 
 		//System.out.print("DVHJVFHJVD" + u);
-		String sql = "insert into user values(?,?,?,?)";
+		String sql = "insert into users values(?,?,?,?)";
 		//String sql = "insert into user_pojo values(?,?,?,?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -30,7 +31,7 @@ public class UserDao {
 
 			int i = ps.executeUpdate();
 			if (i > 0) {
-				//System.out.println("Success");
+				
 				return true;
 			}
 
@@ -41,7 +42,7 @@ public class UserDao {
 	}
 	
 	public List<User> getUserList(){
-		String sql="select * from user";
+		String sql="select * from users";
 		List<User> al=new ArrayList<>();
 		try {
 			PreparedStatement ps=con.prepareStatement(sql);

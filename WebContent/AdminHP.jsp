@@ -117,7 +117,7 @@
 	<!--------------------------------------------------JS Check----------------------------------------------------------->
 
 	<%
-		if (session.getAttribute("username") == null) {
+		if (session.getAttribute("username") == "admin") {
 			response.sendRedirect("LoginPage.jsp");
 		}
 	%>

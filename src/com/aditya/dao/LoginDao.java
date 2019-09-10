@@ -14,7 +14,7 @@ public class LoginDao {
 	String password = "root";
 	*/
 	//String sql = "SELECT * FROM USER_POJO  where ame=? and password=?";
-	String sql = "SELECT * FROM user  where UserName=? and password=?";
+	String sql = "SELECT * FROM users  where UserName=? and password=?";
 	
 	/*String url = "jdbc:postgresql://ec2-184-73-169-163.compute-1.amazonaws.com:5432/dbp79kqc8onoie";
 	String username = "zcazflfwugurmv";
@@ -22,7 +22,7 @@ public class LoginDao {
 
 	public boolean check(String uname, String pass) {
 		try {
-			Class.forName("org.postgresql.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			Connection connection = DBConnect.getConnect();
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, uname);

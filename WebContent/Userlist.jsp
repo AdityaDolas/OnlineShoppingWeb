@@ -1,4 +1,6 @@
-<%@page import="java.awt.List"%>
+<%@page import="com.aditya.pojo.User"%>
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!doctype html>
@@ -54,7 +56,7 @@
 				%>
 				<tr>
 					<th scope="row">1</th>
-					<td><%u.getName()%></td>
+					<td><%=u.getName()%></td>
 					<td><%=u.getNumber()%></td>
 					<td><%=u.getEmail() %></td>
 					<td><%=u.getPassword()%></td>

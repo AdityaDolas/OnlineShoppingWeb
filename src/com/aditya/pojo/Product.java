@@ -4,7 +4,6 @@ public class Product {
 	private String PName;
 	private String PPrice;
 	private String PQuantity;
-	private String PImage;
 	private String PCategory;
 	private String PDescript;
 	public String getPName() {
@@ -25,12 +24,6 @@ public class Product {
 	public void setPQuantity(String pQuantity) {
 		PQuantity = pQuantity;
 	}
-	public String getPImage() {
-		return PImage;
-	}
-	public void setPImage(String pImage) {
-		PImage = pImage;
-	}
 	public String getPCategory() {
 		return PCategory;
 	}
@@ -43,5 +36,6 @@ public class Product {
 	public void setPDescript(String pDescript) {
 		PDescript = pDescript;
 	}
-
-}
+		
+	}
+	

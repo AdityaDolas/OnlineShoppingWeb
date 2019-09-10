@@ -1,6 +1,9 @@
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%> --%>
 <!doctype html>
+<%@page import="com.aditya.dao.ProductDao"%>
+<%@page import="com.aditya.pojo.Product"%>
+<%@page import="java.util.List"%>
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -166,23 +169,33 @@
 	</div>
 	<!--------------------------------------------------Shoes----------------------------------------------------------->
 
+	<%
+		ProductDao pd = new ProductDao();
+		List<Product> pl = pd.getProductList();
+	%>
 	<div class="container mt-5">
 		<div class="row">
+			<%
+				for (Product p : pl) {
+			%>
 			<div class="col-md-3">
 				<div class="card">
 					<img class="card-img-top" alt=""
-						src="https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productimage/2019/2/18/a9307420-17ea-4e62-9541-eb329f6147351550478208379-1.webp">
+						src="Images/<%=p.getPName() %>.jpg">
 					<div class="card-body">
-						<h5>Nike Shoes</h5>
-						<h5>Rs. 12,999</h5>
+						<h5><%=p.getPName() %></h5>
+						<h5>Rs. <%=p.getPPrice() %></h5>
 						<button class="btn btn-danger">
 							<i class="fa facart-plus" aria-hidden="true"></i>Add To Cart
 						</button>
 					</div>
 				</div>
 			</div>
+			<%
+				}
+			%>
 
-			<div class="col-md-3">
+			<!--	<div class="col-md-3">
 				<div class="card">
 					<img class="card-img-top" alt=""
 						src="https://assets.jassets.com/h_600,q_95,w_440/v1/assets/images/productimage/2019/2/18/a89f64ed-e52f-4023-b1a7-99eb90c87dbe1550478618590-1.webp">
@@ -209,8 +222,8 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-3">
+ -->
+			<!-- <div class="col-md-3">
 				<div class="card">
 					<img class="card-img-top" alt=""
 						src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/9393939/2019/4/24/5195e083-4983-47b2-aae9-7bf0a1260ec51556101457627-Sparx-Men-SM-414-Black-Sports-Shoes-6931556101456256-1.jpg">
@@ -225,9 +238,9 @@
 			</div>
 		</div>
 		<br>
-		<!--------------------------------------------------Shoes----------------------------------------------------------->
+		------------------------------------------------Shoes---------------------------------------------------------
 
-		<!--------------------------------------------------T-Shirt----------------------------------------------------------->
+		------------------------------------------------T-Shirt---------------------------------------------------------
 
 
 		<div class="row">
@@ -285,7 +298,7 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<br></br>
